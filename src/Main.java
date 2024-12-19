@@ -1,8 +1,7 @@
 
 /*
-3. Find the sum of the digits in the number 100! (i.e. 100 factorial)
-{Correct answer: 648}
-
+Задача на нахождение кратчайшего пути.
+Реализация алгоритма Дейкстры.
  */
 
 
@@ -37,22 +36,16 @@ public class Main {
         H.addNeighbour(new Edge(6, H, F));
 
         Dijkstra dijkstra = new Dijkstra();
-        // запускаем програму и указываем что вершину с которой начитаем расчет
+        // запускаем программу и указываем что вершину с которой начитаем расчет
         // в данном случае вершина "А"
         dijkstra.compute(A);
-        // указываем вершину "G" до каторой надо расчитать кратчайший путь
+        // указываем вершину "G" до которой надо рассчитать кратчайший путь
         System.out.println(G.getDistance());
 
         // запускаем метод который выводит на экран все вершины через которые проходит наш путь
         dijkstra.showPath(G);
 
 
-
-
-//        // Declaring the startProject object
-//        StartProject startProject = new StartProjectImpl();
-//        // Calling the start() method in the StartProject class
-//        startProject.start();
 
     }
 

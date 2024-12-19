@@ -3,8 +3,8 @@
 
 public class Edge {
 
-    private Vertex start; // начало ребра
-    private Vertex end; // конец ребра
+    private Vertex start; // вершина начала ребра
+    private Vertex end; // вершина конца ребра
     private double weight; // вес ребра
 
     public Edge(double weight, Vertex start, Vertex end) {

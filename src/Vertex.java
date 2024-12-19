@@ -7,15 +7,15 @@ public class Vertex implements Comparable<Vertex>{
 
     private final String name; // Имя вершины
     private boolean visited; // были мы в этой вершине или нет
-    private List<Edge> neighbors = new ArrayList<>(); // массив для хронения соседей
-    private double distance = Double.MAX_VALUE; // растояние до вершин инициализируем растояние как бесконечность
+    private List<Edge> neighbors = new ArrayList<>(); // массив для хранения соседей
+    private double distance = Double.MAX_VALUE; // расстояние до вершин инициализируем расстояние как бесконечность
     private Vertex predecessor = null; // предыдущая вершина из которой пришел
 
     public Vertex(String name) {
         this.name = name;
     }
 
-    // Метод для добавления соседей принимая соседий как ребра
+    // Метод для добавления соседей принимая соседей как ребра
     public void addNeighbour (Edge e){
         neighbors.add(e);
     }
@@ -55,7 +55,7 @@ public class Vertex implements Comparable<Vertex>{
     // Метод для сортировки вершин
     @Override
     public int compareTo(Vertex o) {
-        // Сравнение двух вершин в порядке возростания
+        // Сравнение двух вершин в порядке возрастания
         return Double.compare(this.getDistance(), o.getDistance());
     }
 }
