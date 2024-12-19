@@ -79,16 +79,5 @@ public class Main {
 
         // запускаем метод который выводит на экран все вершины через которые проходит наш путь
         dijkstra.showPath(warszawa);
-
-
-
-
-//        // Declaring the startProject object
-//        StartProject startProject = new StartProjectImpl();
-//        // Calling the start() method in the StartProject class
-//        startProject.start();
-
     }
-
-
 }
