@@ -1,7 +1,9 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
-// Класс Vertex описывает вершину
+// Класс model.Vertex описывает вершину
 
 public class Vertex implements Comparable<Vertex>{
 

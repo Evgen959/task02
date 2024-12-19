@@ -1,18 +1,25 @@
 package model;
 
-import java.util.List;
-
 public class City {
 
-    // private long idCity;
+    private int idCity;
+    private String nameCity;
 
-    private final String nameCity;
-
-    private long namberOfNeighbors;
-
-    private List<Neighbars> neighbars;
-
-    public City(String nameCity) {
+    public City(int idCity, String nameCity) {
+        this.idCity = idCity;
         this.nameCity = nameCity;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("nameCity - %s", nameCity);
+    }
+
+    public int getIdCity() {
+        return idCity;
+    }
+
+    public Vertex getNameCity() {
+        return nameCity;
     }
 }

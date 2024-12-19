@@ -1,5 +1,5 @@
-
-// Класс Edge описывает ребро.
+package model;
+// Класс model.Edge описывает ребро.
 
 public class Edge {
 

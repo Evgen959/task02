@@ -1,6 +1,11 @@
+package service;
+
+import model.Edge;
+import model.Vertex;
+
 import java.util.*;
 
-// Класс Dijkstra описывает логику алгоритма Дейкстры.
+// Класс service.Dijkstra описывает логику алгоритма Дейкстры.
 
 public class Dijkstra {
 

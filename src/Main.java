@@ -49,45 +49,21 @@ Output:
  */
 
 
+
+import controller.StartProjectImpl;
+import controller.interfeces.StartProject;
+
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Vertex gdansk = new Vertex("gdansk");
-        Vertex bydgoszcz = new Vertex("bydgoszcz");
-        Vertex torun = new Vertex("torun");
-        Vertex warszawa = new Vertex("warszawa");
-
-        gdansk.addNeighbour(new Edge(1, gdansk, bydgoszcz));
-        gdansk.addNeighbour(new Edge(3, gdansk, torun));
-        bydgoszcz.addNeighbour(new Edge(1, bydgoszcz, gdansk));
-        bydgoszcz.addNeighbour(new Edge(1, bydgoszcz, torun));
-        bydgoszcz.addNeighbour(new Edge(4, bydgoszcz, warszawa));
-        torun.addNeighbour(new Edge(3, torun, gdansk));
-        torun.addNeighbour(new Edge(1, torun, bydgoszcz));
-        torun.addNeighbour(new Edge(1, torun, warszawa));
-        warszawa.addNeighbour(new Edge(4, warszawa, bydgoszcz));
-        warszawa.addNeighbour(new Edge(1, warszawa, torun));
-
-
-        Dijkstra dijkstra = new Dijkstra();
-        // запускаем программу и указываем что вершину с которой начитаем расчет
-        // в данном случае вершина "gdansk"
-        dijkstra.compute(gdansk);
-        // указываем вершину "warszawa" до каторой надо расчитать кратчайший путь
-        System.out.println(warszawa.getDistance());
-
-        // запускаем метод который выводит на экран все вершины через которые проходит наш путь
-        dijkstra.showPath(warszawa);
-
-
-
-
-//        // Declaring the startProject object
-//        StartProject startProject = new StartProjectImpl();
-//        // Calling the start() method in the StartProject class
-//        startProject.start();
-
+        // Initializing the startProject object
+        // Инициализация объекта startProject
+        StartProject startProject = new StartProjectImpl();
+        // Calling the start() method in the StartProject class
+        // Вызов метода start() в классе StartProject.
+        startProject.start();
     }
 
 
