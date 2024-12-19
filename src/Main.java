@@ -6,9 +6,6 @@
  */
 
 
-import controller.StartProjectImpl;
-import controller.interfeces.StartProject;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -39,15 +36,15 @@ public class Main {
         H.addNeighbour(new Edge(7, H, C));
         H.addNeighbour(new Edge(6, H, F));
 
-        Dijksrea dijksrea = new Dijksrea();
+        Dijkstra dijkstra = new Dijkstra();
         // запускаем програму и указываем что вершину с которой начитаем расчет
         // в данном случае вершина "А"
-        dijksrea.compute(A);
+        dijkstra.compute(A);
         // указываем вершину "G" до каторой надо расчитать кратчайший путь
         System.out.println(G.getDistance());
 
         // запускаем метод который выводит на экран все вершины через которые проходит наш путь
-        dijksrea.showPath(G);
+        dijkstra.showPath(G);
 
 
 

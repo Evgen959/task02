@@ -1,8 +1,8 @@
 import java.util.*;
 
-// Класс Dijksrea описывает логику алгоритма Дейкстры.
+// Класс Dijkstra описывает логику алгоритма Дейкстры.
 
-public class Dijksrea {
+public class Dijkstra {
 
     // создаем приоритетную очередь
     private final PriorityQueue<Vertex> queue = new PriorityQueue<>();
