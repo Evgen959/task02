@@ -35,29 +35,31 @@ public class StartProjectImpl implements StartProject {
         warszawa.addNeighbour(new Edge(1, warszawa, torun));
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Выбери номер города из списка с которого надо начинать расчет: ");
+
         System.out.println("1: gdansk");
         System.out.println("2: bydgoszcz");
         System.out.println("3: torun");
         System.out.println("4: warszawa");
+        System.out.print("Выбери номер города из списка с которого надо начинать расчет: ");
         int a = scanner.nextInt();
 
 
-        // запускаем программу и указываем вершину с которой начитаем расчет
-        // вершину находим по индексу из списка используя метод cityNameByIdCity
+        // запускаем программу и указываем город с которого начитаем расчет
+        // город находим по индексу из списка используя метод cityNameByIdCity
         dijkstra.compute(cityNameByIdCity(a));
 
-        System.out.println("Выбери номер города из списка до которой надо рассчитать кратчайший путь: ");
         System.out.println("1: gdansk");
         System.out.println("2: bydgoszcz");
         System.out.println("3: torun");
         System.out.println("4: warszawa");
+        System.out.print("Выбери номер города из списка до которой надо рассчитать кратчайший путь: ");
         int b = scanner.nextInt();
-        // указываем вершину до которой надо рассчитать кратчайший путь с помощью метода cityNameByIdCity
+
+        // указываем город с помощью метода cityNameByIdCity, до которого надо рассчитать кратчайший путь
         System.out.println(cityNameByIdCity(b).getDistance());
 
         // запускаем метод который выводит на экран все города через которые проходит наш путь
-        dijkstra.showPath(cityNameByIdCity(b));
+//        dijkstra.showPath(cityNameByIdCity(b));
 
 
     }
@@ -76,6 +78,7 @@ public class StartProjectImpl implements StartProject {
         return cityList.stream()
                 .filter(s -> s.getIdCity() == idcity)
                 .findFirst()
-                .map(c -> new Vertex(c.getNameCity()));
+                .map(c -> new Vertex(String.valueOf(c.getNameCity())))
+                .orElse(null);
     }
 }

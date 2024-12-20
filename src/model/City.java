@@ -19,7 +19,7 @@ public class City {
         return idCity;
     }
 
-    public Vertex getNameCity() {
+    public String getNameCity() {
         return nameCity;
     }
 }
