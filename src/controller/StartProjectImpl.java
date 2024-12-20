@@ -40,14 +40,14 @@ public class StartProjectImpl implements StartProject {
         System.out.println("2: bydgoszcz");
         System.out.println("3: torun");
         System.out.println("4: warszawa");
-        System.out.print("Выбери номер города из списка с которого надо начинать расчет: ");
+        System.out.print("Select the city number from the list from which to start the calculation: ");
         int a = scanner.nextInt();
 
         System.out.println("1: gdansk");
         System.out.println("2: bydgoszcz");
         System.out.println("3: torun");
         System.out.println("4: warszawa");
-        System.out.print("Выбери номер города из списка до которой надо рассчитать кратчайший путь: ");
+        System.out.print("Select the city number from the list to which you want to calculate the shortest path: ");
         int b = scanner.nextInt();
 
         // launch the program and indicate the city from which we will start the calculation
