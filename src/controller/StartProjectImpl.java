@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 // This class is designed to interact with the user and store initial data.
-// Этот класс предназначен для взаимодействия с пользователем и хранения исходных данных.
 
 public class StartProjectImpl implements StartProject {
 
@@ -51,21 +50,21 @@ public class StartProjectImpl implements StartProject {
         System.out.print("Выбери номер города из списка до которой надо рассчитать кратчайший путь: ");
         int b = scanner.nextInt();
 
-        // запускаем программу и указываем город с которого начитаем расчет
-        // город находим по индексу из списка используя метод cityNameByIdCity
+        // launch the program and indicate the city from which we will start the calculation
+        // We find the city by index from the list using the cityNameByIdCity method
         dijkstra.compute(cityNameByIdCity(a));
 
-        // указываем город с помощью метода cityNameByIdCity, до которого надо рассчитать кратчайший путь
+        // We indicate the city using the cityNameByIdCity method, to which we need to calculate the shortest path
         System.out.println(cityNameByIdCity(b).getDistance());
 
-        // запускаем метод который выводит на экран все города через которые проходит наш путь
+        // we run a method that displays all the cities through which our path passes
         dijkstra.showPath(cityNameByIdCity(b));
     }
 
-    // метод для указания города
+    // method for specifying a city
     private Vertex cityNameByIdCity (int idcity){
 
-        // создаем не изменяемый List<City>
+        // create an immutable List<City>
         List<City> cityList = List.of(
                 new City(1, gdansk),
                 new City(2, bydgoszcz),
@@ -73,7 +72,7 @@ public class StartProjectImpl implements StartProject {
                 new City(4, warszawa)
         );
 
-        // возвращаем объект Vertex, в stream() фильтруем по номеру города
+        // return a Vertex object, filter by city number in stream()
         return cityList.stream()
                 .filter(s -> s.getIdCity() == idcity)
                 .findFirst()

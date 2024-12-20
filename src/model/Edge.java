@@ -1,5 +1,6 @@
 package model;
-// Класс model.Edge описывает ребро.
+
+// The Edge class describes an edge.
 
 public class Edge {
 

@@ -59,10 +59,8 @@ public class Main {
     public static void main(String[] args) {
 
         // Initializing the startProject object
-        // Инициализация объекта startProject
         StartProject startProject = new StartProjectImpl();
         // Calling the start() method in the StartProject class
-        // Вызов метода start() в классе StartProject.
         startProject.start();
     }
 

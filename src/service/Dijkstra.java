@@ -5,64 +5,64 @@ import model.Vertex;
 
 import java.util.*;
 
-// Класс service.Dijkstra описывает логику алгоритма Дейкстры.
+// The Dijkstra class describes the logic of Dijkstra algorithm.
 
 public class Dijkstra {
 
-    // создаем приоритетную очередь
+    // create a priority queue
     private final PriorityQueue<Vertex> queue = new PriorityQueue<>();
 
-    // метод реализующий логику алгоритма Дейкстры
+    //method implementing the logic of Dijkstra algorithm
     public void compute(Vertex source){
 
-        source.setDistance(0);// присваиваем первой вершине растояние "0"
-        queue.add(source); // добавляем первую вершину в очередь
+        source.setDistance(0);// assign distance "0" to the first vertex
+        queue.add(source); // add the first vertex to the queue
 
-        // проходим по очереди пока в ней что-то есть
+        // we go through the line until there is something in it
         while (!queue.isEmpty()){
-            // извлекаем из очереди вершину
+            // remove a vertex from the queue
             Vertex curr = queue.poll();
 
-            // проходим по всем соседям, а узнаем соседей четез ребра
+            // we go through all the neighbors, and recognize the neighbors through the edge
             for (Edge e : curr.getNeighbors()){
-                // инициализируем вершину в конце ребра
+                // initialize the vertex at the end of the edge
                 Vertex end = e.getEnd();
-                // на ходим вес ребра
+                // find the weight of the edge
                 double w = e.getWeight();
 
-                // если еще небыл в вершине в конце ребра
+                // if you haven't already been to the vertex at the end of the edge
                 if (!end.isVisited()){
-                    // если сумма нынишней вершины и вес ребра меньше чем значение вершины в конце ребра
+                    // if the sum of the current vertex plus the weight of the edge is less than the value of the vertex at the end of the edge
                     if (curr.getDistance() + w < end.getDistance()){
-                        // меняем значение вершины в конце ребра на растояние покороче
+                        // change the value of the vertex at the end of the edge to a shorter distance
                         end.setDistance(curr.getDistance() + w);
-                        // если в очереди лежит сосед
+                        // if a neighbor is in line
                         if (queue.contains(end))
-                            // удаляем соседа из очереди
+                            // remove a neighbor from the queue
                             queue.remove(end);
-                        // добавляем соседа с новым значением
+                        // add a neighbor with a new value
                         queue.add(end);
-                        // добавляем вершину откуда приходим
+                        // add the vertex from where we come
                         end.setPredecessor(curr);
                     }
                 }
             }
-            // если мы посетили всех соседей то выходим из цикла
+            // if we have visited all neighbors, then we exit the loop
             curr.setVisited(true);
         }
     }
 
-    // метод который выводит на экран все вершины через которые проходит наш путь
+    // a method that displays all the vertices through which our path passes
     public void showPath(Vertex end){
-        // Создаем коллекцию из вершин нашего пути с конца в начало
+        // We create a collection of vertices of our path from end to beginning
         List<Vertex> path = new ArrayList<>();
 
-        // цик для прохождения по всему пути с конца в начало
+        // loop to go all the way from end to beginning
         while (end != null){
             path.add(end);
             end = end.getPredecessor();
         }
-        // реверс нашей коллекции для отображения пути с начала до конца
+        // reverse of our collection to show the path from start to finish
         Collections.reverse(path);
         for (Vertex v : path)
             System.out.print(v.getName()  + " ");
