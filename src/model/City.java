@@ -3,23 +3,18 @@ package model;
 public class City {
 
     private int idCity;
-    private String nameCity;
+    private Vertex nameCity;
 
-    public City(int idCity, String nameCity) {
+    public City(int idCity, Vertex nameCity) {
         this.idCity = idCity;
         this.nameCity = nameCity;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("nameCity - %s", nameCity);
     }
 
     public int getIdCity() {
         return idCity;
     }
 
-    public String getNameCity() {
+    public Vertex getNameCity() {
         return nameCity;
     }
 }
